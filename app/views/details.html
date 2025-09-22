@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% from 'back-link/macro.njk' import backLink %}
+{% from 'button/macro.njk' import button %}
+{% from 'radios/macro.njk' import radios %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "magical-powers",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/form-handler" method="post" novalidate>
+
+        {% from 'textarea/macro.njk' import textarea %}
+
+{{ textarea({
+  name: "example",
+  id: "example",
+  label: {
+    text: "Can you provide more detail?"
+  },
+  hint: {
+    text: "Do not include personal information like your name, date of birth or NHS number"
+  }
+}) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

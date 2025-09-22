@@ -25,16 +25,23 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Service name goes here</h1>
-      <p>Use this service to do something.</p>
+      <h1>Order a test to see if you have magical powers</h1>
+      <p>Use this service to see if you are eligible to order a magical powers test and order a test to be delivered to your home.</p>
       {% from 'inset-text/macro.njk' import insetText %}
+{% from 'images/macro.njk' import image %}
 
+{{ image({
+  src: "/images/harry.png",
+  sizes: "(max-width: 768px) 100vw, 66vw",
+  alt: "Close-up of Harry Potter's face.",
+  caption: "Harry Potter."
+}) }}
 {% set insetTextHtml %}
   <p>You can use this service if you:</p>
       <ul>
         <li>live in England</li>
-        <li>need to get a thing</li>
-        <li>need to change a thing</li>
+        <li>have symptoms of magical powers</li>
+        <li>are aged 18 or older</li>
       </ul>
 
       
@@ -48,7 +55,7 @@
 
       <h2>Before you start</h2>
 
-      <p>We'll ask you for: ...</p>
+      <p>We'll ask you for your home address.</p>
 
       {{ button({
         text: "Start now",

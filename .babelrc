@@ -1,0 +1,17 @@
+{
+  "browserslistEnv": "javascripts",
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "bugfixes": true,
+        "loose": true
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "browserslistEnv": "node"
+    }
+  }
+}

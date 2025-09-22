@@ -34,6 +34,23 @@
           },
           {
             key: {
+              text: "Magical symptoms"
+            },
+            value: {
+              text: data.symptoms
+            },
+            actions: {
+              items: [
+                {
+                  href: "symptomslist",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
               text: "Details"
             },
             value: {
@@ -59,7 +76,7 @@
       </h2>
 
       <p>
-        Your details will be sent to Rose Medical Practice to begin your registration.
+        Your details will be sent to Dr Harry Potter to begin your assessment.
       </p>
 
       <form action="confirmation" method="post" novalidate>

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% from 'back-link/macro.njk' import backLink %}
+{% from 'button/macro.njk' import button %}
+{% from 'radios/macro.njk' import radios %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "magical-powers",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/details" method="post" novalidate>
+
+        {% from 'checkboxes/macro.njk' import checkboxes %}
+
+{{ checkboxes({
+  idPrefix: "Symptoms",
+  name: "symptoms",
+  fieldset: {
+    legend: {
+      text: "What magical symptoms are you showing?",
+      classes: "nhsuk-fieldset__legend--l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  items: [
+    {
+      value: "I am levitating",
+      text: "Levitating"
+    },
+    {
+      value: "Cats speak to me",
+      text: "Cats speak to me"
+    },
+    {
+      value: "I Have an owl",
+      text: "I have an owl"
+    },
+    {
+      value: "I can make things dissapear",
+      text: "I can make things dissapear"
+    }
+  ]
+}) }}
+{% from 'button/macro.njk' import button %}
+
+{{ button({
+  text: "Continue"
+}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -15,12 +15,12 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/form-handler" method="post" novalidate>
+      <form action="check-answers" method="post" novalidate>
 
         {% from 'textarea/macro.njk' import textarea %}
 
 {{ textarea({
-  name: "example",
+  name: "moreDetails",
   id: "example",
   label: {
     text: "Can you provide more detail?"

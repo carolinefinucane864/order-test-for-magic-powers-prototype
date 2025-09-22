@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% from 'panel/macro.njk' import panel %}
+{% from "summary-list/macro.njk" import summaryList %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ panel({
+        titleText: "Test ordered",
+        text: "We will send you your test"
+      }) }}
+
+      <h2 class="nhsuk-heading-m">Your address</h2>
+
+      {% set siteLocationHtml %}
+        St George's Pharmacy<br>
+        46 St George's Rd<br>
+        Elephant and Castle<br>
+        London<br>
+        SE1 6ET
+      {% endset %}
+
+      {{ summaryList({
+        classes: "nhsuk-summary-list--no-border",
+        rows: [
+          {
+            key: {
+              text: "Home address"
+            },
+            value: {
+              html: siteLocationHtml
+            }
+          },
+          {
+            key: {
+              text: "Date and time"
+            },
+            value: {
+              text: "Thursday 15 June at 9:10am"
+            }
+          }
+        ]
+      }) }}
+
+      <p>
+        <a href="#">Tell us about your experience using this service</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

@@ -12,6 +12,16 @@
       <h2 class="nhsuk-heading-m">
         Personal details
       </h2>
+  
+{% set address %}
+ {{data.addressLine1}}
+ {{data.addressLine2}}
+ {{data.addressTown}}
+ {{data.addressCounty}}
+ {{data.addressPostcode}}
+            
+{% endset -%}
+
 
       {{ summaryList({
         rows: [
@@ -55,6 +65,24 @@
             },
             value: {
               text: data.moreDetails
+            },
+            actions: {
+              items: [
+                {
+                  href: "details",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+             html: address
+              
             },
             actions: {
               items: [
